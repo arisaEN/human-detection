@@ -9,7 +9,7 @@ from datetime import datetime
 
 
 # LINEトークンID
-ACCESS_TOKEN = "hsiQPt5TJi6aJxahFYBltEUxjW0348SQ66pSWKvnlii"
+ACCESS_TOKEN = "あなたのアクセストークン"
 headers = {"Authorization": f"Bearer {ACCESS_TOKEN}"}
 
 # モデルファイルの絶対パスを設定
