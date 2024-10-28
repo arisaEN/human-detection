@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 import cv2
 import os
 import numpy as np
@@ -10,11 +9,11 @@ from datetime import datetime
 
 
 # LINEトークンID
-ACCESS_TOKEN = "あなたのLINEアクセストークン"
+ACCESS_TOKEN = "hsiQPt5TJi6aJxahFYBltEUxjW0348SQ66pSWKvnlii"
 headers = {"Authorization": f"Bearer {ACCESS_TOKEN}"}
 
 # モデルファイルの絶対パスを設定
-base_dir = "/home/arisa2/human_detection/models/"
+base_dir = "/home/pcmainte/ai_camera/models/"
 prototxt_path = os.path.join(base_dir, "deploy.prototxt")
 model_path = os.path.join(base_dir, "mobilenet_iter_73000.caffemodel")
 
@@ -33,7 +32,7 @@ PERSON_CLASS_ID = 15
 fps = 40  # 1秒あたりのフレーム数
 delay = 1 / fps  # 各フレーム間の遅延時間
 
-save_dir = f"/home/arisa2/human_detection/pic"
+save_dir = f"/home/pcmainte/ai_camera/pic"
 
 
 
@@ -118,7 +117,7 @@ while True:
 
                 phr = '泥棒発見。通報しました。'
                 # jtalk(phr)
-                time.sleep(1.5)
+                time.sleep(0.1)
                 data = {'message': "泥棒の侵入を検知しました。"}
                 files = {'imageFile': open(filename, "rb")}
                 # LINEで写真送信
@@ -128,7 +127,7 @@ while True:
                     data=data,
                     files=files,
                 )
-                time.sleep(0.1)
+                time.sleep(2)
 
 
     # フレームを表示
